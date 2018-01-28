@@ -1,0 +1,4 @@
+﻿1. Khi build project:
+	+ Kiểm tra jdk phù hợp.
+	+ Kiểm tra driver (2 nơi app console và app web) cách đưa vào tại note cty.
+	+ Kiểm tra tomcat phù hợp
