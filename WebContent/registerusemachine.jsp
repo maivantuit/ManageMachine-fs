@@ -14,15 +14,15 @@
 		<%@ include file="header.jsp" %>
         <%@ include file="menu.jsp" %>
         <div id="createc1">
-			<form class="form" action="DanhSachDichVuServlet" method="POST">
+			<form class="form" action="SuDungMayServlet" method="POST">
 				<table>
-					<h1>Create new customer</h1>
+					<h1>Create new use machine</h1>
 					<tr>
 						<td>
 							Khách hàng:							
 						</td>
 						<td>
-							<select>
+							<select name="makhachhang">
 								<option value="">---Choice customers---</option>
 								<%
 									ArrayList<KhachHang> listkhachhang = (ArrayList<KhachHang>)request.getAttribute("listkhachhang");  
@@ -38,37 +38,45 @@
 					
 					<tr>
 						<td>
-							Dịch vụ:
+							Máy:
 						</td>
 						<td>
-							<select>
-								<option>a</option>
-								<option>a</option>
+							<select name="mamay">
+								<option value="">---Choice code machines---</option>
+								<%
+									ArrayList<May> listMay = (ArrayList<May>)request.getAttribute("listMay");  
+									for(May dv: listMay){
+								%>
+									<option value="<%=dv.getMaMay()%>"><%=dv.getMaMay()%></option>
+								<%
+									} 
+								%>
 							</select>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							Ngày sử dụng:
+							Ngày bắt đầu sử dụng:
 						</td>
 						<td>
-							<input type="date" name="ngaysudung">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Giờ sử dụng:
-						</td>
-						<td>
-							<input type="time" name="giosudung">
+							<input type="text" name="ngaybatdausudung">
+							 <!--nho bo text, bo date no loi-->
 						</td>
 					</tr>
 					<tr>
 						<td>
-							Số lượng:
+							Giờ bắt đầu sử dụng:
 						</td>
 						<td>
-							<input type="text" name="soluong">
+							<input type="time" name="giobatdausudung">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Thời gian sử dụng:
+						</td>
+						<td>
+							<input type="time" name="thoigiansudung">
 						</td>
 					</tr>
 					<tr id="bt">		

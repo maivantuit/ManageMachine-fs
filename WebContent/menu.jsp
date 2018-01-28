@@ -12,7 +12,7 @@
 					<li><a href="enumlistmachine.jsp">Enum list machine</a></li>
 					<li><a href="enumlistcustomers.jsp">Enum list customers</a></li>
 					<li><a href="enumlistservices.jsp">Enum list services</a></li>
-					<li><a href="registerusemachine.jsp">Register use machine</a></li>
+					<li><a href="DanhSachMayServlet">Register use machine</a></li>
 					<li><a href="DanhSachKhachHangServlet">Register use services</a></li> 
 					<!-- 
 					1.Khi chay vao jsp, ma du lieu tu controller, nen jsp bi loi. ta chay vao thang vao controller => day qua view 

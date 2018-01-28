@@ -99,4 +99,14 @@
     <servlet-name>DanhSachTatCaServlet</servlet-name>
     <url-pattern>/DanhSachTatCaServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SuDungMayServlet</display-name>
+    <servlet-name>SuDungMayServlet</servlet-name>
+    <servlet-class>controller.SuDungMayServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SuDungMayServlet</servlet-name>
+    <url-pattern>/SuDungMayServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import model.bean.May;
+import model.bean.Services;
 
 import connection.DBConnect;
 
@@ -35,6 +36,29 @@ public class MayDAO {
 				m.setMaMay(rs.getString("MaMay"));
 				m.setViTri(rs.getString("ViTri"));
 				m.setTrangThai(rs.getString("TrangThai"));
+				list.add(m);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+//  get ma may:
+	public ArrayList<May> getMaMayAtDAO(){
+		Connection con = DBConnect.getConnection();
+		String sql = "select MaMay from May";
+		ResultSet rs=null;
+		try {
+			Statement stmt = con.createStatement();
+			rs= stmt.executeQuery(sql);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		ArrayList<May> list = new ArrayList<May>();
+		try {			
+			while(rs.next()){
+				May m = new May();
+				m.setMaMay(rs.getString("MaMay"));						
 				list.add(m);
 			}
 		} catch (Exception e) {

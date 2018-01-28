@@ -2,3 +2,4 @@
 	+ Kiểm tra jdk phù hợp.
 	+ Kiểm tra driver (2 nơi app console và app web) cách đưa vào tại note cty.
 	+ Kiểm tra tomcat phù hợp
+2. 1 table map với 1 class, và tùy theo bussiness để viết, k viết thừa. time thi.

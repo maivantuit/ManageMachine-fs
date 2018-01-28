@@ -3,12 +3,15 @@ package controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.bean.KhachHang;
 import model.bean.May;
+import model.bo.KhachHangBO;
 import model.bo.MayBO;
 
 /**
@@ -41,6 +44,25 @@ public class DanhSachMayServlet extends HttpServlet {
 		ArrayList<May> listmay = mb.getListMay();
 		request.setAttribute("listmay", listmay);
 		*/
+		
+		// lay ma may:
+		MayBO mb = new MayBO();
+		ArrayList listMay = mb.getMaMayAtDAO();
+		request.setAttribute("listMay", listMay);
+		
+		/*
+		 * Lay 2 combobox cung 1 servlet!!!
+		 * */
+		
+		// lay danh sach 2 gia tri makh, tenkh:
+				KhachHangBO khb = new KhachHangBO();
+				ArrayList<KhachHang> listkhachhang = khb.getMaKHANDTenKH();
+				request.setAttribute("listkhachhang", listkhachhang);
+				System.out.println(listkhachhang);		
+		
+		// finally:
+		RequestDispatcher rd = request.getRequestDispatcher("registerusemachine.jsp");
+		rd.forward(request, response);
 	}
 
 }

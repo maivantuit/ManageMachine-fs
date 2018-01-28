@@ -14,4 +14,8 @@ public class MayBO {
 	public ArrayList<May> getListMay(){
 		return md.getListMay();
 	}
+	
+	public ArrayList<May> getMaMayAtDAO(){
+		return md.getMaMayAtDAO();
+	}
 }
