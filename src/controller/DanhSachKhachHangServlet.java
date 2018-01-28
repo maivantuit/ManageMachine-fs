@@ -51,6 +51,9 @@ public class DanhSachKhachHangServlet extends HttpServlet {
 		ArrayList<Services> listdichvu =svb.getMaDVANDTenDV();
 		request.setAttribute("listdichvu",listdichvu);
 		
+		/*
+		 * Lay 2 combobox cung 1 servlet!!!
+		 * */
 		
 		// finally:
 		RequestDispatcher rd = request.getRequestDispatcher("registeruseservices.jsp");
