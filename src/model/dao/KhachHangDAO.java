@@ -74,12 +74,66 @@ public class KhachHangDAO {
 		}
 		return list;
 	}
+	
+	// 4. update customers in table KhachHang:
+	public boolean updateCustomer(String maKH, String tenKH, String diaChi,
+			String soDienThoai, String email){
+		Connection con = DBConnect.getConnection();
+		String sql = String.format("update KhachHang " +
+				"set TenKH = N'%s', DiaChi = N'%s', SoDienThoai = '%s',DiaChiEmail ='%s' " +
+				"where MaKH = '%s'",tenKH,diaChi,soDienThoai,email,maKH);
+		try {
+			Statement stmt = con.createStatement();
+			stmt.executeUpdate(sql);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	// 5. get a record customers from table KhachHang:
+	public KhachHang getThongTinKhachHang(String mkh){
+		Connection con  = DBConnect.getConnection();
+		String sql = String.format("select MaKH, TenKH,DiaChi,SoDienThoai,DiaChiEmail from KhachHang where MaKH = '%s'", mkh);
+		ResultSet rs = null;
+		try {
+			Statement stmt = con.createStatement();
+			rs = stmt.executeQuery(sql);
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		}
+		KhachHang khachHang = new KhachHang();
+		try {
+			while(rs.next()){
+				khachHang.setMaKH(mkh);
+				khachHang.setTenKH("TenKH");
+				khachHang.setDiaChi("DiaChi");
+				khachHang.setEmail("SoDienThoai");
+				khachHang.setEmail("DiaChiEmail");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return khachHang;
+	}
+	
+	
 	public static void main(String[] args) {
 		KhachHangDAO khd = new KhachHangDAO();
 		//khd.insertKhachHang("KH012","Nguyen Huu Ty","Quang Binh","0948428281","ty@gmail.com");
-		ArrayList<KhachHang> list2 =  khd.getMaKHANDTenKH();
+		
+		/*ArrayList<KhachHang> list2 =  khd.getMaKHANDTenKH();
 		for(KhachHang kh: list2){
 			System.out.println(kh.getMaKH()+" "+kh.getTenKH());
+		}
+		khd.updateCustomer("KH01", "Mai Văn Tú", "Quảng Trị", "098888888", "tutu@gmail.com");
+		*/
+		
+		KhachHang kh1 = khd.getThongTinKhachHang("KH01");
+		if(kh1 !=null){
+			System.out.println("Oke");
+		}else{
+			System.out.println("Not oke");
 		}
 		
 	}

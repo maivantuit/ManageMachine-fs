@@ -21,6 +21,7 @@
         <div id="table-may">
 			<table>
 				<h1>List Customes</h1>
+				<h4><a href="createnewcustomers.jsp">Add new customes</a></h4>
 				<span>Tìm kiếm</span><input type="text" placeholder="Search..">
 				<tr>
 					<th>Mã khách hàng</th>
@@ -41,8 +42,8 @@
 					<td><%= kh.getSoDienThoai()%></td>
 					<td><%= kh.getEmail()%></td>
 					<td>											
+						<a href="UpdateCustomersServlet?mkh=<%= kh.getMaKH() %>">Update</a>
 						<a href="">Delete</a>
-						<a href="">Update</a>
 					</td>
 				</tr>
 				<%} %>

@@ -20,4 +20,11 @@ public class KhachHangBO {
 	public ArrayList<KhachHang> getMaKHANDTenKH(){
 		return khd.getMaKHANDTenKH();
 	}
+	public boolean updateCustomer(String maKH, String tenKH, String diaChi,
+			String soDienThoai, String email){
+		return khd.updateCustomer(maKH, tenKH, diaChi, soDienThoai, email);
+	}
+	public KhachHang getThongTinKhachHang(String mkh){
+		return khd.getThongTinKhachHang(mkh);
+	}
 }

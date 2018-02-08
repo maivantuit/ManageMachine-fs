@@ -12,15 +12,15 @@ import model.bean.KhachHang;
 import model.bo.KhachHangBO;
 
 /**
- * Servlet implementation class KhachHangServlet
+ * Servlet implementation class UpdateCustomersServlet
  */
-public class KhachHangServlet extends HttpServlet {
+public class UpdateCustomersServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public KhachHangServlet() {
+    public UpdateCustomersServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,24 +35,24 @@ public class KhachHangServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		KhachHangBO khachhangbo = new KhachHangBO();
+		KhachHangBO khachHangBo= new KhachHangBO();
+		String mkh = request.getParameter("mkh");
 		
-		// neu nhan nut submit:
 		if("submit".equals(request.getParameter("submit"))){
-			String makhachhang = request.getParameter("makhachhang");
-			String tenkhachhang = request.getParameter("tenkhachhang");
-			String diachi = request.getParameter("diachi");
-			String sodienthoai = request.getParameter("sodienthoai");
+			String tenKhachHang = request.getParameter("tenKhachHang");
+			String diaChi = request.getParameter("diaChi");
+			String soDienThoai = request.getParameter("soDienThoai");
 			String email = request.getParameter("email");
-			khachhangbo.insertKhachHang(makhachhang, tenkhachhang, diachi, sodienthoai, email);	
-			RequestDispatcher rd = request.getRequestDispatcher("success.jsp");
-			rd.forward(request, response);
+			khachHangBo.updateCustomer(mkh, tenKhachHang, diaChi, soDienThoai, email);
+			response.sendRedirect("enumlistcustomers.jsp");
 		}else{
-			RequestDispatcher rd = request.getRequestDispatcher("createnewcustomers.jsp");
+			KhachHang khachHang = khachHangBo.getThongTinKhachHang(mkh);
+			request.setAttribute("khachHang", khachHang);
+			RequestDispatcher rd = request.getRequestDispatcher("updatecustomers.jsp");
 			rd.forward(request, response);
-		}
+		}		
 		
 	}
 

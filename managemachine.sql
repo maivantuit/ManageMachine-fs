@@ -50,7 +50,7 @@ insert into NguoiDung(id,password) values('cop','123')
 
 
 
---
+-----
 SELECT id FROM NguoiDung WHERE id = 'cop' AND password = '123'
 select MaKH,TenKH from KhachHang
 select MaDV,TenDV from DichVu
@@ -62,3 +62,7 @@ join SuDungDichVu on KhachHang.MaKH = SuDungDichVu.MaKH
 join DichVu on DichVu.MaDV = SuDungDichVu.MaDV
 join May on May.MaMay = SuDungMay.MaMay
 
+update KhachHang set MaKH='KH01', TenKH = 'Mai Văn Tú', DiaChi = N'Quảng Trị', SoDienThoai = '0987989999',DiaChiEmail ='maivantuit@gmail.com' where MaKH = 'KH01'
+select MaKH, TenKH,DiaChi,SoDienThoai,DiaChiEmail
+from KhachHang
+where MaKH = 'KH01'

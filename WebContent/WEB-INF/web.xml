@@ -109,4 +109,15 @@
     <servlet-name>SuDungMayServlet</servlet-name>
     <url-pattern>/SuDungMayServlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>UpdateCustomersServlet</display-name>
+    <servlet-name>UpdateCustomersServlet</servlet-name>
+    <servlet-class>controller.UpdateCustomersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateCustomersServlet</servlet-name>
+    <url-pattern>/UpdateCustomersServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
