@@ -109,7 +109,6 @@
     <servlet-name>SuDungMayServlet</servlet-name>
     <url-pattern>/SuDungMayServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>UpdateCustomersServlet</display-name>
@@ -119,5 +118,15 @@
   <servlet-mapping>
     <servlet-name>UpdateCustomersServlet</servlet-name>
     <url-pattern>/UpdateCustomersServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DanhSachKhachHangServlet2</display-name>
+    <servlet-name>DanhSachKhachHangServlet2</servlet-name>
+    <servlet-class>controller.DanhSachKhachHangServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DanhSachKhachHangServlet2</servlet-name>
+    <url-pattern>/DanhSachKhachHangServlet2</url-pattern>
   </servlet-mapping>
 </web-app>

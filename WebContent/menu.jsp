@@ -10,7 +10,7 @@
 					<li><a href="createnewcustomers.jsp">Create new customes</a></li>
 					<li><a href="createnewservices.jsp">Create new services</a></li>
 					<li><a href="enumlistmachine.jsp">Enum list machine</a></li>
-					<li><a href="enumlistcustomers.jsp">Enum list customers</a></li>
+					<li><a href="DanhSachKhachHangServlet2">Enum list customers</a></li>
 					<li><a href="enumlistservices.jsp">Enum list services</a></li>
 					<li><a href="DanhSachMayServlet">Register use machine</a></li>
 					<li><a href="DanhSachKhachHangServlet">Register use services</a></li> 

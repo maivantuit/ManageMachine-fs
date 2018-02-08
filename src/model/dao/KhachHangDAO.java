@@ -41,7 +41,7 @@ public class KhachHangDAO {
 				kh.setTenKH(rs.getString("TenKH"));
 				kh.setDiaChi(rs.getString("DiaChi"));
 				kh.setSoDienThoai(rs.getString("SoDienThoai"));
-				kh.setDiaChi(rs.getString("DiaChiEmail"));
+				kh.setEmail(rs.getString("DiaChiEmail"));
 				list.add(kh);
 			}
 		} catch (Exception e) {
@@ -106,10 +106,10 @@ public class KhachHangDAO {
 		try {
 			while(rs.next()){
 				khachHang.setMaKH(mkh);
-				khachHang.setTenKH("TenKH");
-				khachHang.setDiaChi("DiaChi");
-				khachHang.setEmail("SoDienThoai");
-				khachHang.setEmail("DiaChiEmail");
+				khachHang.setTenKH(rs.getString("TenKH"));
+				khachHang.setDiaChi(rs.getString("DiaChi"));
+				khachHang.setSoDienThoai(rs.getString("SoDienThoai"));
+				khachHang.setEmail(rs.getString("DiaChiEmail"));				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -125,16 +125,17 @@ public class KhachHangDAO {
 		/*ArrayList<KhachHang> list2 =  khd.getMaKHANDTenKH();
 		for(KhachHang kh: list2){
 			System.out.println(kh.getMaKH()+" "+kh.getTenKH());
-		}
-		khd.updateCustomer("KH01", "Mai Văn Tú", "Quảng Trị", "098888888", "tutu@gmail.com");
-		*/
+		}*/
+		khd.updateCustomer("KH01", "Mai Văn Tú", "Quảng Trị 2", "098888777", "tutu@gmail.com");
 		
+		/*
 		KhachHang kh1 = khd.getThongTinKhachHang("KH01");
 		if(kh1 !=null){
 			System.out.println("Oke");
 		}else{
 			System.out.println("Not oke");
 		}
+		*/
 		
 	}
 }

@@ -53,8 +53,11 @@ public class DanhSachKhachHangServlet extends HttpServlet {
 		
 		/*
 		 * Lay 2 combobox cung 1 servlet!!!
-		 * */
-		
+		 * 
+		 */		 		
+		// lay danh sach khach hang:
+		ArrayList<KhachHang> listkhachhang2 = khb.getListKhachHang();		
+		request.setAttribute("listkhachhang2", listkhachhang2);
 		// finally:
 		RequestDispatcher rd = request.getRequestDispatcher("registeruseservices.jsp");
 		rd.forward(request, response);

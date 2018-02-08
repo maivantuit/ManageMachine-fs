@@ -38,15 +38,14 @@ public class UpdateCustomersServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		KhachHangBO khachHangBo= new KhachHangBO();
-		String mkh = request.getParameter("mkh");
-		
+		String mkh = request.getParameter("mkh"); // Su dung 2 noi: click update, 2: request.getparameter("maKhachHang") from input.							
 		if("submit".equals(request.getParameter("submit"))){
 			String tenKhachHang = request.getParameter("tenKhachHang");
 			String diaChi = request.getParameter("diaChi");
 			String soDienThoai = request.getParameter("soDienThoai");
 			String email = request.getParameter("email");
 			khachHangBo.updateCustomer(mkh, tenKhachHang, diaChi, soDienThoai, email);
-			response.sendRedirect("enumlistcustomers.jsp");
+			response.sendRedirect("DanhSachKhachHangServlet2");
 		}else{
 			KhachHang khachHang = khachHangBo.getThongTinKhachHang(mkh);
 			request.setAttribute("khachHang", khachHang);

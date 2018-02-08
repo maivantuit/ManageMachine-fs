@@ -11,14 +11,15 @@
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
-		<% 
-			KhachHangBO khb = new KhachHangBO();
-			ArrayList<KhachHang> listkhachhang = khb.getListKhachHang();		
-		%>
 		
+		<%
+			ArrayList<KhachHang> listkhachhang2 = (ArrayList<KhachHang>) request.getAttribute("listkhachhang2");			
+		%>
 		<%@ include file="header.jsp" %>
         <%@ include file="menu.jsp" %>
         <div id="table-may">
+        	<form action="DanhSachKhachHangServlet" method="post">
+        	</form>
 			<table>
 				<h1>List Customes</h1>
 				<h4><a href="createnewcustomers.jsp">Add new customes</a></h4>
@@ -32,7 +33,7 @@
 					<th>Chức năng</th>
 				</tr>
 				<%
-					for(KhachHang kh : listkhachhang){
+					for(KhachHang kh : listkhachhang2){
 										
 				%>
 				<tr>

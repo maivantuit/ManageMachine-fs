@@ -24,7 +24,7 @@
 							Mã khách hàng:							
 						</td>
 						<td>
-							<input value="<%= khachHang.getMaKH()%>" type="text" readonly="readonly" name="maKhangHang">
+							<input value="<%= khachHang.getMaKH()%>" type="text" readonly="readonly" name="mkh">
 						</td>
 					</tr>
 					<tr>
