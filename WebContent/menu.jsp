@@ -6,6 +6,7 @@
 			<li>
 				<a href="#">Screen</a>
 				<ul class="sub-menu2">
+					<li><a href="DanhSachNhanVienServlet">List Employee</a></li>
 					<li><a href="createnewmachine.jsp">Create new machine</a></li>
 					<li><a href="createnewcustomers.jsp">Create new customes</a></li>
 					<li><a href="createnewservices.jsp">Create new services</a></li>

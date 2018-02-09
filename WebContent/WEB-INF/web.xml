@@ -129,4 +129,14 @@
     <servlet-name>DanhSachKhachHangServlet2</servlet-name>
     <url-pattern>/DanhSachKhachHangServlet2</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DanhSachNhanVienServlet</display-name>
+    <servlet-name>DanhSachNhanVienServlet</servlet-name>
+    <servlet-class>controller.DanhSachNhanVienServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DanhSachNhanVienServlet</servlet-name>
+    <url-pattern>/DanhSachNhanVienServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

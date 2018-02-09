@@ -3,6 +3,7 @@ create database ManageMachine
 go
 use ManageMachine
 go
+
 create table May(
 	MaMay varchar(10) primary key,
 	ViTri varchar(10),
@@ -10,7 +11,7 @@ create table May(
 )
 insert into May(MaMay,ViTri,TrangThai) values('M01','1','Online')
 create table KhachHang(
-	MaKH varchar(10) primary key,
+	MaKH varchar(10) primary key,	
 	TenKH nvarchar(40),
 	DiaChi nvarchar(40),
 	SoDienThoai varchar(20),
@@ -47,10 +48,36 @@ create table NguoiDung(
 	password nvarchar(30)
 )
 insert into NguoiDung(id,password) values('cop','123')
+create table LoaiNhanVien(
+	MaLoaiNV varchar(10) primary key,
+	TenLoaiNhanVien nvarchar(30)
+)
+insert into LoaiNhanVien(MaLoaiNV,TenLoaiNhanVien) values('LNV01',N'NV Trông Quán')
+insert into LoaiNhanVien(MaLoaiNV,TenLoaiNhanVien) values('LNV02',N'NV Vệ Sinh')
 
+create table NhanVien(
+	MaNV varchar(10) primary key,
+	MaLoaiNV varchar(10) foreign key references LoaiNhanVien(MaLoaiNV),
+	TenNV nvarchar(20),
+	DiaChi nvarchar(50),
+	SoDienThoai varchar(20)
+)
+insert into NhanVien(MaNV,MaLoaiNV,TenNV,DiaChi,SoDienThoai) values('NV01','LNV01',N'Mai Văn Tú 2',N'Quảng Trị 2','0928382182')
+insert into NhanVien(MaNV,MaLoaiNV,TenNV,DiaChi,SoDienThoai) values('NV02','LNV01',N'Mai Phước Quốc',N'Quảng Trị 2','0928382182')
+insert into NhanVien(MaNV,MaLoaiNV,TenNV,DiaChi,SoDienThoai) values('NV03','LNV02',N'Anh Quốc',N'Quảng Trị 2','0928382182')
 
 
 -----
+select MaNV, TenNV,DiaChi,SoDienThoai,TenLoaiNhanVien
+from NhanVien
+join LoaiNhanVien on NhanVien.MaLoaiNV = LoaiNhanVien.MaLoaiNV
+
+select MaNV,LoaiNhanVien.MaLoaiNV, TenNV,DiaChi,SoDienThoai,TenLoaiNhanVien from NhanVien join LoaiNhanVien on NhanVien.MaLoaiNV = LoaiNhanVien.MaLoaiNV
+select MaNV,TenNV,DiaChi,SoDienThoai
+from NhanVien
+where 
+MaLoaiNV = 'LNV01'
+
 SELECT id FROM NguoiDung WHERE id = 'cop' AND password = '123'
 select MaKH,TenKH from KhachHang
 select MaDV,TenDV from DichVu
